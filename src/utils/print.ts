@@ -28,9 +28,11 @@ function printBlock(scope: Scope, title: string, clientCode: Function) {
         outputFooter = color.purple + L + title + RE + reset;
     }
     return function () {
+        console.log("");
         console.log(outPutHeader);
         clientCode();
         console.log(outputFooter);
+        console.log("");
     };
 }
 export default {

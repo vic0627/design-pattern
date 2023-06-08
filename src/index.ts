@@ -1,6 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
 
+let argv = JSON.parse(process.env.npm_config_argv ?? '{ "original": [] }');
+if (argv.original.length > 2) argv = argv.original[2].split("--")[1];
+if (typeof argv === "string")
+    if (argv.endsWith(".ts") || !argv.endsWith(".js"))
+        throw new TypeError("Argument should end with '.js'!");
+const commandHasArg = typeof argv === "string";
+
 // 取得當前絕對路徑
 const rootPath = path.resolve(__dirname);
 
@@ -32,9 +39,14 @@ function importAllModules(directory: string, fileName?: string) {
         } else if (filePath.endsWith(".js")) {
             if (!fileName) continue;
             const module = require(filePath);
-            if (!(moduleFunctions[fileName] instanceof Array))
-                moduleFunctions[fileName] = [];
-            if (module.default) moduleFunctions[fileName].push(module.default);
+            if (commandHasArg && file === argv) {
+                if (module.default) moduleFunctions.default = [module.default];
+            } else if (!commandHasArg) {
+                if (!(moduleFunctions[fileName] instanceof Array))
+                    moduleFunctions[fileName] = [];
+                if (module.default)
+                    moduleFunctions[fileName].push(module.default);
+            }
         }
     }
 }
@@ -44,9 +56,13 @@ importAllModules(rootPath);
 import print from "./utils/print";
 const { Scope, printBlock } = print;
 Object.keys(moduleFunctions).forEach((pattern) => {
-    printBlock(Scope.h1, pattern.split("P").join(" P"), () => {
-        moduleFunctions[pattern].forEach((func) => {
-            func();
-        });
-    })();
+    const patternValue = moduleFunctions[pattern];
+    if (pattern === "default") {
+        patternValue[0]();
+    } else
+        printBlock(Scope.h1, pattern.split("P").join(" P"), () => {
+            patternValue.forEach((func) => {
+                func();
+            });
+        })();
 });
