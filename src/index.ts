@@ -1,13 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
 
-let argv = JSON.parse(process.env.npm_config_argv ?? '{ "original": [] }');
-if (argv.original.length > 2) argv = argv.original[2].split("--")[1];
+let argv = process.argv[3] ?? [];
+// let argv = JSON.parse(process.argv[3] ?? '{ "original": [] }');
+// if (argv.original.length > 2) argv = argv.original[2].split("--")[1];
 if (typeof argv === "string")
     if (argv.endsWith(".ts") || !argv.endsWith(".js"))
         throw new TypeError("Argument should end with '.js'!");
 const commandHasArg = typeof argv === "string";
-
 // 取得當前絕對路徑
 const rootPath = path.resolve(__dirname);
 

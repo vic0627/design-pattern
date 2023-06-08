@@ -1,4 +1,3 @@
-import print from "../../utils/print";
 /**
  * This Strategy interface declares operations common to all supported versions
  * of some algorithm.
@@ -61,6 +60,7 @@ class Context {
     }
 }
 
+import print from "../../utils/print";
 const { Scope, printBlock } = print;
 export default printBlock(Scope.h2, "Strategy Pattern", function () {
     const context = new Context(new ConcreteStrategyA());

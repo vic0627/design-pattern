@@ -1,32 +1,41 @@
-import ansi from "./ANSI";
+import ansi from "./ansi";
 const { color, format, reset } = ansi;
 enum Scope {
     h1,
     h2,
     h3,
 }
-
+const err = (str: string | undefined) => str === undefined;
 function printBlock(scope: Scope, title: string, clientCode: Function) {
     let outPutHeader: string, outputFooter: string;
+    let L: string | undefined,
+        RS: string | undefined,
+        RE: string | undefined,
+        fm: string | undefined,
+        cl: string | undefined;
     if (scope === Scope.h1) {
-        const L = "##########  ";
-        const RS = " Start  ##########";
-        const RE = " End  ##########";
-        outPutHeader = format.bold + color.green + L + title + RS + reset;
-        outputFooter = format.bold + color.green + L + title + RE + reset;
+        L = "##########  ";
+        RS = " Start  ##########";
+        RE = " End  ##########";
+        fm = format.bold;
+        cl = color.green;
     } else if (scope === Scope.h2) {
-        const L = "==========  ";
-        const RS = " Start  ==========";
-        const RE = " End  ==========";
-        outPutHeader = format.bold + color.blue + L + title + RS + reset;
-        outputFooter = format.bold + color.blue + L + title + RE + reset;
+        L = "==========  ";
+        RS = " Start  ==========";
+        RE = " End  ==========";
+        fm = format.bold;
+        cl = color.blue;
     } else if (scope === Scope.h3) {
-        const L = "----------  ";
-        const RS = " Start  ----------";
-        const RE = " End  ----------";
-        outPutHeader = color.purple + L + title + RS + reset;
-        outputFooter = color.purple + L + title + RE + reset;
+        L = "----------  ";
+        RS = " Start  ----------";
+        RE = " End  ----------";
+        fm = "";
+        cl = color.purple;
+    } else {
+        throw new Error("Something went wrong!");
     }
+    outPutHeader = fm + cl + L + title + RS + reset;
+    outputFooter = fm + cl + L + title + RE + reset;
     return function () {
         console.log("");
         console.log(outPutHeader);

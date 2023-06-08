@@ -1,22 +1,22 @@
 {
-    "name": "design-pattern",
-    "version": "1.0.0",
-    "description": "A design pattern tutorial",
-    "main": "dist/index.js",
-    "scripts": {
-        "test": "tsc && node dist/index.js $"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vic0627/design-pattern.git"
-    },
-    "author": "Victor Hsu",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/vic0627/design-pattern/issues"
-    },
-    "homepage": "https://github.com/vic0627/design-pattern#readme",
-    "dependencies": {
-        "@types/node": "^20.2.5"
-    }
+  "name": "design-pattern",
+  "version": "1.0.0",
+  "description": "A design pattern tutorial",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "tsc && node dist/index.js --"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vic0627/design-pattern.git"
+  },
+  "author": "Victor Hsu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vic0627/design-pattern/issues"
+  },
+  "homepage": "https://github.com/vic0627/design-pattern#readme",
+  "dependencies": {
+    "@types/node": "^20.2.5"
+  }
 }

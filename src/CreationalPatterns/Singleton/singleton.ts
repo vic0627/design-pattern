@@ -1,4 +1,3 @@
-import print from "../../utils/print";
 // The Singleton class defines the `getInstance` method that lets clients access the unique singleton instance.
 class SingletonPerson {
     // The member variable that stores the singleton instance must be declared as a static type.
@@ -27,6 +26,7 @@ class SingletonPerson {
 }
 
 // The client code
+import print from "../../utils/print";
 const { Scope, printBlock } = print;
 export default printBlock(Scope.h2, "Singleton Pattern", function () {
     const ins1 = SingletonPerson.getInstance();
