@@ -11,15 +11,15 @@ The key concept of the Strategy Pattern is the separation of behavior (algorithm
 
 ## Application Scenarios
 
--   When multiple algorithms or strategies are available for solving a problem, and the client needs the flexibility to switch between them at runtime.
--   When there is a need to isolate the algorithm implementation details from the client code.
--   When a class has multiple conditional statements that can be replaced with different strategies.
+- When multiple algorithms or strategies are available for solving a problem, and the client needs the flexibility to switch between them at runtime.
+- When there is a need to isolate the algorithm implementation details from the client code.
+- When a class has multiple conditional statements that can be replaced with different strategies.
 
--   替換算法：當需要在不同的算法之間進行替換時，策略模式非常有用。例如，對於排序操作，可以根據數據及的大小或類型選擇不同的排序算法，如快排、冒泡或合併等排序方式。
--   表單驗證：在表單驗證過程當中，可以使用策略模式來定義不同的驗證策略。例如，驗證電子郵件地址可以用正規表達式，而驗證電話號碼時可以切換檢查特定格式的策略。
--   圖像處理：在圖像處理的應用中策略模式可以用於實現不同的濾淨效果。每個濾鏡可以作為一個策略，用戶可以選擇應用哪個策略來修改圖像。
--   路由選擇：在網路路由器應用或負載均衡器中，策略模式可以用於根據不同的條件選擇最佳路由策略。例如，根據數據包大小、網路流量或目的地等等條件，選擇最適合的路由策略。
--   促銷活動：在電子商務系統中，可以使用策略模式來實現不同的促銷活動。每個促銷活動可以作為一個策略，根據用戶購買的行為、商品類型或優惠券等條件來選擇適用的促銷策略。
+- 替換算法：當需要在不同的算法之間進行替換時，策略模式非常有用。例如，對於排序操作，可以根據數據及的大小或類型選擇不同的排序算法，如快排、冒泡或合併等排序方式。
+- 表單驗證：在表單驗證過程當中，可以使用策略模式來定義不同的驗證策略。例如，驗證電子郵件地址可以用正規表達式，而驗證電話號碼時可以切換檢查特定格式的策略。
+- 圖像處理：在圖像處理的應用中策略模式可以用於實現不同的濾淨效果。每個濾鏡可以作為一個策略，用戶可以選擇應用哪個策略來修改圖像。
+- 路由選擇：在網路路由器應用或負載均衡器中，策略模式可以用於根據不同的條件選擇最佳路由策略。例如，根據數據包大小、網路流量或目的地等等條件，選擇最適合的路由策略。
+- 促銷活動：在電子商務系統中，可以使用策略模式來實現不同的促銷活動。每個促銷活動可以作為一個策略，根據用戶購買的行為、商品類型或優惠券等條件來選擇適用的促銷策略。
 
 ## Pros and Cons
 
