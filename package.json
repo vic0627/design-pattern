@@ -18,5 +18,8 @@
   "homepage": "https://github.com/vic0627/design-pattern#readme",
   "dependencies": {
     "@types/node": "^20.2.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.3"
   }
 }

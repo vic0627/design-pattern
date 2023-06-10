@@ -8,6 +8,7 @@ if (typeof argv === "string")
     if (argv.endsWith(".ts") || !argv.endsWith(".js"))
         throw new TypeError("Argument should end with '.js'!");
 const commandHasArg = typeof argv === "string";
+console.log(process.argv)
 // 取得當前絕對路徑
 const rootPath = path.resolve(__dirname);
 
