@@ -9,6 +9,53 @@ The key concept of the Strategy Pattern is the separation of behavior (algorithm
 
 策略模式的核心概念是將不同的算法封裝成獨立的類別，並且讓這些類別實現共同的介面。這樣，使用算法的客戶端程式碼可以通過介面引用不同的策略類別，而不需要知道具體的實現細節。在運行時，可以根據需要動態地切換策略。
 
+## Structure and Components
+
+```text
++-------------------------+          +--------------------+
+| Context                 |          | interface Strategy |
+| - strategy: Strategy    |<>------->| + execute(data)    |
+| + setStrategy(strategy) |          +--------------------+
+| + doSomething()         |             ^
++-------------------------+             |
+  ^   |                                 |
+  |   {                                 |
+  |     strategy.execute();             |
+  |   }                                 |
+  |                                     +---------------------+
+  +--------+                            | Concrete Strategies |+
+  | Client |--------------------------->| ...                 ||
+  +--------+                            | + execute(data)     ||
+    |                                   +---------------------+|
+    |                                    +---------------------+
+    {
+      const ctx = new Context();
+      const strA = new StrategyA();
+      const strB = new StrategyB();
+      ctx.setStrategy(strA);
+      ctx.doSomething();
+      ctx.setStrategy(strB);
+      ctx.doSomething();
+    }
+```
+
+- **Context 上下文**
+  The Context maitains a reference to a specific strategy and communicates with it sloey through the strategy interface.
+  上下文持續引用一個特定的策略，且僅通過策略的介面與該策略進行交流。
+- **Strategy 策略**
+  The Strategy interface is a common interface for all concrete strategies. It declares a method for the context to execute the strategy.
+  策略介面是所有策略實體的共通介面，它聲明了一個方法給上下文來執行。
+- **Concrete Strategies 策略實體**
+  Concrete Startegies implements various different variants of algorithms used by the context.
+  策略實體實現了各種不同的策略變體，並提供算法給上下文。
+- **Client 客戶端**
+  The Client creates a specific strategy object and passes it to the context. The context provides a setter to allow the client to replace the associated strategy at runtime.
+  客戶端創建了一個特定的策略物件，並帶入給上下文。上下文會提供一個 setter，並允許客戶端在程式執行時替換與其連接的策略。
+
+*When the context needs to run an algorithm, it invokes the execute method on the strategy object it is connected to. The context is unaware on the specific strategy type and how the algorithm is executed.*
+
+*當上下文需要運行算法時，它會在與它連結的策略對象上調用執行方法，而上下文本身不會知道其所涉及的策略類型與算法的執行方式。*
+
 ## Application Scenarios
 
 - When multiple algorithms or strategies are available for solving a problem, and the client needs the flexibility to switch between them at runtime.
@@ -26,22 +73,20 @@ The key concept of the Strategy Pattern is the separation of behavior (algorithm
 ### Adventages
 
 1. Encapsulates algorithms: The strategy pattern encapsulates different algorithms or strategies, making them easily interchangeable.
+  封裝算法：策略模式將不同的算法或策略封裝起來，使他們可以輕鬆地互換使用。
 2. Promotes code reuse: Strategies can be reused across different contexts without modifying the client code.
+  促進代碼重用：策略可以在不修改客戶端代碼的情況下在不同的上下文中重用。
 3. Enables runtime flexibility: The client can switch between strategies dynamically at runtime without affecting the overall system behavior.
+  實現代碼運行時的靈活性：客戶端可以在運行時動態切換策略，而不會影響整個系統的行為。
 4. Simplifies maintenance: Adding or modifying strategies does not require changes to the client code, which simplifies maintenance and reduces the risk of introducing bugs.
-
-5. 封裝算法：策略模式將不同的算法或策略封裝起來，使他們可以輕鬆地互換使用。
-6. 促進代碼重用：策略可以在不修改客戶端代碼的情況下在不同的上下文中重用。
-7. 實現代碼運行時的靈活性：客戶端可以在運行時動態切換策略，而不會影響整個系統的行為。
-8. 簡化維護：添加或修改策略不需要對客戶端代碼進行更改，簡化了維護工作並減少引入錯誤的風險。
+  簡化維護：添加或修改策略不需要對客戶端代碼進行更改，簡化了維護工作並減少引入錯誤的風險。
 
 ### Disadvantages
 
 1. Increased number of classes: Implementing the strategy pattern may lead to an increased number of classes, especially when there are many strategies involved.
+  類別數目增加：實現策略模式可能會導致類別數目增加，特別是當涉及到多個策略時。
 2. Potential performance impact: The strategy pattern may introduce overhead due to the additional layer of abstraction and indirection.
-
-3. 類別數目增加：實現策略模式可能會導致類別數目增加，特別是當涉及到多個策略時。
-4. 潛在的性能影響：策略模式可能會引入額外的抽象和間接層，這可能會對性能產生影響。
+  潛在的性能影響：策略模式可能會引入額外的抽象和間接層，這可能會對性能產生影響。
 
 ---
 
