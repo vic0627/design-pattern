@@ -1,10 +1,46 @@
 # Proxy Pattern (代理模式)
 
-> Proxy Pattern is a Structural design pattern that provides a surrogate or placeholder for another object to control access to it. In other words, it allows us to create a proxy object that acts as a subtitle for the real object. The proxy object can intercept requests from the client and perform additional tesks before or after forwarding the request to the real object.
+> **Proxy Pattern** is a Structural design pattern that provides a surrogate or placeholder for another object to control access to it. In other words, it allows us to create a proxy object that acts as a subtitle for the real object. The proxy object can intercept requests from the client and perform additional tesks before or after forwarding the request to the real object.
 
 ## Concept
 
 The main concept behind the Proxy Pattern is to add a level of indirection between the client and the real object, providing a way to control and manage access to the object. The proxy object can be used to implement various behaviors such as lazy initialization, caching, access control, logging, and remote communication.
+
+## Structure and Components
+
+```text
+                +----------------------------+
+                | interface ServiceInterface |    +--------+
+                | + operation()              |<---| Client |
+                +----------------------------+    +--------+
+                              ^
+                              |
+                ------------------------------
+                |                            |
++------------------------+          +---------------+
+| Proxy                  |          | Service       |
+| - realService: Service |<>------->| ...           |
+| + Proxy(s: Service)    |---       | + operation() |
+| + checkAccess()        |  |       +---------------+
+| + operation()          |  |
++------------------------+  { realService = s; }
+    |
+    {
+        if (checkAccess()) {
+            realService.operation();
+        }
+    }
+```
+
+- **Service Interface 服務介面**
+  The Service Interface declares the service interface. The proxy must adhere to this interface in order to masquerade as a service.
+- **Service 服務實體**
+  The Service class provides some useful business logic.
+- **Proxy 代理**
+  The Proxy class contains a reference member variable pointing to the servie object. After perforiming its tasks (such as lazy initialization, logging, access control, and caching), the proxy passes the request to the service object.
+  Typically, the proxy manages the entire lifecycle of its service objects.
+- **Client 客戶端**
+  The Client can interact with the service or the proxy through the same interface, allowing you to use the proxy in any code that requires a service object.
 
 ## Application Scenarios
 
