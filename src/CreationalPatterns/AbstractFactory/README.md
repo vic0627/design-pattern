@@ -28,7 +28,7 @@ The main concept behind the Abstract Factory Pattern is to encapsulate the creat
     |               |                           ^                       |
 +-----------+   +-----------+                   |                       {
 | Concrete  |   | Concrete  |                   |                           ProductA pa = factory.createProductA()
-| PruductA2 |   | Pruductb2 |                   |                       }
+| PruductA2 |   | PruductB2 |                   |                       }
 +-----------+   +-----------+   +------------------------------+        
     |               |           | ConcreteFactory2             |
     └---------------└-----------| ...                          |
