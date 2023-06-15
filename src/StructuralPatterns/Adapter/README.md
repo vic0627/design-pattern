@@ -70,7 +70,7 @@ that have different interfaces from what our application expects. The adapter he
 2. Perfarmance Overhead: The adapter may introduce some performance ^#^overhead due to the additional translation or mapping operations that need to be performed.
 3. Limited Functionality: Depending on the complexity of the interfaces ^#^involved, the adapter may not be able to fully expose all the functionality of the wrapped object.
 
-## Relationship with Other Patterns
+## Relationship with other patterns
 
 - The Bridge pattern is often designed ^#^up-front, letting you develop parts of an application independently of each other. On the other hand, the Adapter pattern is commonly used with an existing application to make incompatible classes work together effectively.
 - An Adapter can alter an existing object's interface, while a Decorator enhances an object's functionality without changing its interface. In addition, Decorators support ^#^recursive composition, but Adapters cannot.
