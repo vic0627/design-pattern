@@ -1,6 +1,6 @@
 # Strategy Pattern (策略模式)
 
-> **Strategy Pattern** is a behavioral design pattern that enables an object to dymaically change its behavior at runtime by encapsulating a set of algorithms and making them interchangeable. It allows the algorithms to vary independently from the clients that use them.
+> **Strategy Pattern** is a behavioral design pattern that enables an object to dymaically change its behavior at runtime by encapsulating a set of algorithms and making them ^#^interchangeable. It allows the algorithms to vary independently from the clients that use them.
 
 ## Concept
 
@@ -37,7 +37,7 @@ The key concept of the Strategy Pattern is the separation of behavior (algorithm
 ```
 
 - **Context 上下文**
-  The Context maitains a reference to a specific strategy and communicates with it sloey through the strategy interface.
+  The context maintains a reference to a specific strategy and communicates with that object only through the strategy interface.
 - **Strategy 策略**
   The Strategy interface is a common interface for all concrete strategies. It declares a method for the context to execute the strategy.
 - **Concrete Strategies 策略實體**
@@ -78,13 +78,29 @@ The key concept of the Strategy Pattern is the separation of behavior (algorithm
 ## Relationship with other patterns
 
 - The **Bridge**, **State**, and **Strategy** patterns (including the **Adapter** pattern to some degree) have similar interfaces. In fact, they all share the same foundation - the **Composition** pattern, where work is delegated to other objects. However, each of them solves different problems. Patterns are not just recipes for organizing code in a specific way; you can also use them to discuss the problems they solve with other developers.
-- The **Command** pattern and the **Strategy** pattern may appear similar because both can ^#^parameterize objects with some behavior. However, their intentions are quite different.
+- The **Command** pattern and the **Strategy** pattern may appear similar because both can parameterize objects with some behavior. However, their intentions are quite different.
   - You can use the Command pattern to convert any operation into an object. The opteration's parameters become the object's member variables. You can delay the execution of the operation, put it in a queue, save command history, or send commands to remote services, ^#^among other possibilities.
   - On the other hand, Strategy is often used to describe different ways of accomplishing something, allowing you to switch algorithms within the same context class.
 - The **Decorator** pattern lets you change the appearance of an object, while the Strategy pattern allows you to change its ^#^essence.
-- The **Template Method** pattern is based on inheritance, allowing you to change parts of an algorithm by extending certain ^#^poritions in subclasses. The Strategy pattern, however, is based on composition, allowing you to change parts of an object's behavior by providing different strategies for the corresponding behavior. Template Method operates at the class level, making it static, while Strategy operates at the object level, allowing behavior switching at runtime.
+- The **Template Method** pattern is based on inheritance, allowing you to change parts of an algorithm by extending certain ^#^portions in subclasses. The Strategy pattern, however, is based on composition, allowing you to change parts of an object's behavior by providing different strategies for the corresponding behavior. Template Method operates at the class level, making it static, while Strategy operates at the object level, allowing behavior switching at runtime.
 - The **State** pattern can be seen as an extension of the Strategy pattern. Both are based on comopsition, as they delegate part of the work to "helper" objects to change their behavior in different contexts. The Strategy pattern keeps these objects completely independent and ^#^unaware of each other. However, the State pattern does not limit dependencies between specific states and allows them to change their state in different contexts.
 
 ---
 
-Overall, the Strategy Pattern provides a flexible and reusable way to manage algorithms and behaviors in an object-oriented system. It promotes code flexibility, extensibility, and maintenance ease. However, it should be used judiciously, considering the trade-offs in terms of code complexity and performance.
+Overall, the Strategy Pattern provides a flexible and reusable way to manage algorithms and behaviors in an object-oriented system. It promotes code flexibility, extensibility, and maintenance ease. However, it should be used ^#^judiciously, considering the ^#^trade-offs ^#^in terms of code complexity and performance.
+
+---
+
+## Glossary
+
+| words | pronunciation | definition |
+| ----- | ------------- | ---------- |
+| interchangeable | /ˌɪn.t̬ɚˈtʃeɪn.dʒə.bəl/ | able to be exchanged with each other without making any difference or without being noticed |
+| extract | /ɪkˈstrækt/ | to remove or take out something / to make someone give you something when they do not want to |
+| among | /əˈmʌŋ/ | in the middle of or surrounded by other things / happening or being included as part of a group of people or things / to each one in a group of three or more people or things |
+| essence | /ˈes.əns/ | the basic or most important idea or quality of something |
+| portion | /ˈpɔːr.ʃən/ | a part or share of something larger |
+| unaware | /ˌʌn.əˈwer/ | not understanding or realizing something |
+| judiciously | /dʒuːˈdɪʃ.əs.li/ | in a way that has or shows reason and good judgment in making decisions |
+| trade-offs | -- | a balancing of two opposing situations or qualities, both of which are desired / a trade-off is also a situation in which the achieving of something you want involves the loss of something else which is also desirable, but less so |
+| in terms of | -- | in relation to something |

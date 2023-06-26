@@ -1,6 +1,6 @@
 # Proxy Pattern (代理模式)
 
-> **Proxy Pattern** is a Structural design pattern that provides a surrogate or placeholder for another object to control access to it. In other words, it allows us to create a proxy object that acts as a subtitle for the real object. The proxy object can intercept requests from the client and perform additional tesks before or after forwarding the request to the real object.
+> **Proxy Pattern** is a Structural design pattern that provides a ^#^surrogate or placeholder for another object to control access to it. In other words, it allows us to create a proxy object that acts as a subtitle for the real object. The proxy object can ^#^intercept requests from the client and perform additional tasks before or after forwarding the request to the real object.
 
 ## Concept
 
@@ -33,7 +33,7 @@ The main concept behind the Proxy Pattern is to add a level of indirection betwe
 ```
 
 - **Service Interface 服務介面**
-  The proxy must adhere to Service Interface in order to masquerade as a service.
+  The proxy must ^#^adhere to Service Interface in order to ^#^masquerade as a service.
 - **Service 服務實體**
   The Service class provides some useful business logic.
 - **Proxy 代理**
@@ -44,9 +44,9 @@ The main concept behind the Proxy Pattern is to add a level of indirection betwe
 
 ## Application Scenarios
 
-- Virtual Proxies: When we want to create wxpensive objects only when they are actually needed. The proxy object can create the real object on-demand, thereby improving performance.
-- Protection Proxies: When we want to control access to sensitive or private objects. The proxy object can check the permissions or credentials of the client before allowing access to the real object.
-- Remote Proxies: When we want to provide a local representation of an object that resides in a different address space or on a remote server. The proxy object can handle communication details and make remote calls on behalf of the client.
+- Virtual Proxies: When we want to create expensive objects only when they are actually needed. The proxy object can create the real object on-demand, thereby improving performance.
+- Protection Proxies: When we want to control access to sensitive or private objects. The proxy object can check the permissions or ^#^credentials of the client before allowing access to the real object.
+- Remote Proxies: When we want to provide a local representation of an object that ^#^resides in a different address space or on a remote server. The proxy object can handle communication details and make remote calls ^#^on behalf of the client.
 
 ## Implementation Approach
 
@@ -62,7 +62,7 @@ The main concept behind the Proxy Pattern is to add a level of indirection betwe
 
 1. Separation of Concerns: The proxy object provides a clear separation between the client and the real object, allowing each to focus on their specific responsibilities.
 2. Enhanced Security: The proxy object can add an extra layer of security by controlling access to the real object and performing authentication or authorization checks.
-3. Improved Performance: The proxy object can optimize the access to the real object by performing caching, lazy initialization, or other optimization techniques.
+3. Improved Performance: The proxy object can ^#^optimize the access to the real object by performing caching, lazy initialization, or other optimization techniques.
 
 ### Disadvantages
 
@@ -72,10 +72,27 @@ The main concept behind the Proxy Pattern is to add a level of indirection betwe
 
 ## Relationship with other patterns
 
-- The Adapter pattern provides a different interface for the wrapped object, while the Proxy pattern provides the same interface for the object. The Decorator pattern enhances the interface of the object.
-- The Facade pattern and the Proxy pattern have similarities in that they both cache a complex entity and initialize it on their own. The Proxy and its service object ^#^adhere to the same interface, allowing them to be interchangeable, which is different from the Facade pattern.
-- Decorator and Proxy have similar structures but serve different purpose. Both patterns are based on the composition priciples, which means that an object should delegate some of its work to another object. The difference lies in the fact that a Proxy usually manages the lifecycle of its service object, while the generation of a Decorator is always controlled by the client.
+- The **Adapter** pattern provides a different interface for the wrapped object, while the **Proxy** pattern provides the same interface for the object. The **Decorator** pattern enhances the interface of the object.
+- The **Facade** pattern and the **Proxy** pattern have similarities in that they both cache a complex entity and initialize it on their own. The Proxy and its service object adhere to the same interface, allowing them to be interchangeable, which is different from the Facade pattern.
+- **Decorator** and **Proxy** have similar structures but serve different purpose. Both patterns are based on the composition ^#^principles, which means that an object should delegate some of its work to another object. The difference lies in the fact that a Proxy usually manages the lifecycle of its service object, while the generation of a Decorator is always controlled by the client.
 
 ---
 
 In summary, the Proxy Pattern is a design pattern that allows us to control access to an object by providing a surrogate or placeholder. It offers flexibility, security, and performance improvements, but it also introduces complexity and potential overhead. It is suitable for scenarios where we need to manage access to objects or add additional behaviors without modifying the existing code.
+
+---
+
+## Glossary
+
+| words | pronunciation | definition |
+| ----- | ------------- | ---------- |
+| surrogate | /ˈsɝː.ə.ɡət/ | replacing someone else or used instead of something else |
+| intercept | /ˌɪn.t̬ɚˈsept/ | to stop and catch something or someone before that thing or person is able to reach a particular place |
+| adhere | /ədˈhɪr/ | to stick firmly |
+| masquerade | /ˌmæs.kəˈreɪd/ | to pretend or appear to be |
+| credential | /krɪˈden.ʃəl/ | a piece of information that is sent from one computer to another to check that a user is who they claim to be or to allow someone to see information |
+| reside (in sth) | /rɪˈzaɪd/ | if a power or quality resides in someone or something, the person or thing has that power or quality |
+| on behalf of someone | -- | representing |
+| feasible | /ˈfiː.zə.bəl/ | able to be made, done, or achieved |
+| optimize | /ˈɑːp.tə.maɪz/ | to make something as good as possible |
+| principle | /ˈprɪn.sə.pəl/ | a basic idea or rule that explains or control how something happens or works |

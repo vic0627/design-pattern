@@ -72,11 +72,11 @@ that have different interfaces from what our application expects. The adapter he
 
 ## Relationship with other patterns
 
-- The Bridge pattern is often designed ^#^up-front, letting you develop parts of an application independently of each other. On the other hand, the Adapter pattern is commonly used with an existing application to make incompatible classes work together effectively.
-- An Adapter can alter an existing object's interface, while a Decorator enhances an object's functionality without changing its interface. In addition, Decorators support ^#^recursive composition, but Adapters cannot.
-- Adapters provide a different interface to the wrapped objects, Proxy provides the same interface, and Decorators provide an enhanced interface.
-- The Facade pattern defines a new interface for existing objects, ^#^whereas the Adapter pattern tries to make the existing interface usable. Adapters usually wrap a single object, while Facades often work with an entire subsystem of objects.
-- The interfaces of objects in the Bridge, State, and Strategy patterns can be very similar. In fact, they can all be based on the same ^#^underlying abstraction, the Composition pattern. However, they solve different problems. A pattern is not just a recipe for organizing code in a specific way; it can also communicate to other developers the problem the pattern solves.
+- The **Bridge** pattern is often designed ^#^up-front, letting you develop parts of an application independently of each other. On the other hand, the **Adapter** pattern is commonly used with an existing application to make incompatible classes work together effectively.
+- An **Adapter** can alter an existing object's interface, while a **Decorator** enhances an object's functionality without changing its interface. In addition, Decorators support ^#^recursive composition, but Adapters cannot.
+- **Adapters** provide a different interface to the wrapped objects, **Proxy** provides the same interface, and **Decorators** provide an enhanced interface.
+- The **Facade** pattern defines a new interface for existing objects, ^#^whereas the **Adapter** pattern tries to make the existing interface usable. Adapters usually wrap a single object, while Facades often work with an entire subsystem of objects.
+- The interfaces of objects in the **Bridge**, **State**, and **Strategy** patterns can be very similar. In fact, they can all be based on the same ^#^underlying abstraction, the **Composition** pattern. However, they solve different problems. A pattern is not just a recipe for organizing code in a specific way; it can also communicate to other developers the problem the pattern solves.
 
 ---
 
