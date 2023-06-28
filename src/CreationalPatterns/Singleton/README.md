@@ -24,7 +24,7 @@ The key concept of the Singleton Pattern is to have a class that is responsible 
   }
 ```
 
-- **Singleton**
+- **Singleton 單例**
   The Singleton class declares a static method named `getInstance` to  ^#^obtain an  instasnce of the class, which returns the same instance of the class.
   The constructor of the Singleton must be hidden from the client code. The method call must be the only way to obtain the Singleton object.
 
