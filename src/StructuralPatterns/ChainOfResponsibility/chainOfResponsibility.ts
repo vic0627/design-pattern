@@ -99,7 +99,7 @@ const dog = new DogHandler();
 
 monkey.setNext(squirrel).setNext(dog);
 
-export default printBlock(Scope.h2, "Singleton Pattern", function () {
+export default printBlock(Scope.h2, "Chain Of Responsibility Pattern", function () {
     /**
      * The client should be able to send a request to any handler, not just the
      * first one in the chain.

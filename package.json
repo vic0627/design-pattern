@@ -4,7 +4,7 @@
   "description": "A design pattern tutorial",
   "main": "dist/index.js",
   "scripts": {
-    "test": "tsc && node dist/index.js --"
+    "test": "tsc --project ./tsconfig.json && node dist/index.js --"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,8 @@
     "url": "https://github.com/vic0627/design-pattern/issues"
   },
   "homepage": "https://github.com/vic0627/design-pattern#readme",
-  "dependencies": {
-    "@types/node": "^20.2.5"
-  },
   "devDependencies": {
+    "@types/node": "^20.9.0",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.43.0",
