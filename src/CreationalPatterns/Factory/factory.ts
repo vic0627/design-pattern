@@ -2,7 +2,7 @@
  * Product Interface
  */
 interface Product {
-    operation(): void
+    operation(): void;
 }
 
 /**
@@ -10,7 +10,7 @@ interface Product {
  */
 class ConcreteProductA implements Product {
     operation(): void {
-        console.log("Concrete Product A operation.")
+        console.log("Concrete Product A operation.");
     }
 }
 
@@ -19,7 +19,7 @@ class ConcreteProductA implements Product {
  */
 class ConcreteProductB implements Product {
     operation(): void {
-        console.log("Concrete Product B operation.")
+        console.log("Concrete Product B operation.");
     }
 }
 
@@ -27,10 +27,10 @@ class ConcreteProductB implements Product {
  * Creator (Factory) abstract class
  */
 abstract class Creator {
-    abstract factoryMethod(): Product
+    abstract factoryMethod(): Product;
     someOperation(): void {
         const product = this.factoryMethod();
-        product.operation()
+        product.operation();
     }
 }
 
@@ -39,7 +39,7 @@ abstract class Creator {
  */
 class ConcreteCreatorA extends Creator {
     factoryMethod(): Product {
-        return new ConcreteProductA()
+        return new ConcreteProductA();
     }
 }
 
@@ -48,17 +48,14 @@ class ConcreteCreatorA extends Creator {
  */
 class ConcreteCreatorB extends Creator {
     factoryMethod(): Product {
-        return new ConcreteProductB()
+        return new ConcreteProductB();
     }
 }
 
-import print from "../../utils/print"
-const { Scope, printBlock } = print
-
-export default printBlock(Scope.h2, "Factory Method Pattern", () => {
+export default () => {
     const creatorA = new ConcreteCreatorA();
     creatorA.someOperation();
 
     const creatorB = new ConcreteCreatorB();
     creatorB.someOperation();
-})
+};

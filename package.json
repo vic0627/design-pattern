@@ -4,7 +4,7 @@
   "description": "A design pattern tutorial",
   "main": "dist/index.js",
   "scripts": {
-    "test": "tsc --project ./tsconfig.json && node dist/index.js --"
+    "test": "tsc --project ./tsconfig.json && node dist/index.js"
   },
   "repository": {
     "type": "git",

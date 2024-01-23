@@ -139,9 +139,7 @@ class Caretaker {
     }
 }
 
-import print from "../../utils/print";
-const { Scope, printBlock } = print;
-export default printBlock(Scope.h2, "Memento Pattern", function () {
+export default () => {
     const originator = new Originator("Super-duper-super-puper-super.");
     const caretaker = new Caretaker(originator);
 
@@ -162,4 +160,4 @@ export default printBlock(Scope.h2, "Memento Pattern", function () {
 
     console.log("\nClient: Once more!\n");
     caretaker.undo();
-});
+};

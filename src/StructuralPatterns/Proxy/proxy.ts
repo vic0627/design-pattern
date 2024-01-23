@@ -68,9 +68,7 @@ function clientCode(subject: Subject) {
     subject.rerquest();
 }
 
-import print from "../../utils/print";
-const { Scope, printBlock } = print;
-export default printBlock(Scope.h2, "Proxy pattern", () => {
+export default () => {
     console.log("Client: Executing the client code with a real subject:");
     const realSubject = new RealSubject();
     clientCode(realSubject);
@@ -78,4 +76,4 @@ export default printBlock(Scope.h2, "Proxy pattern", () => {
     console.log("Client: Executing the same client code with a proxy:");
     const proxy = new ProxyPattern(realSubject);
     clientCode(proxy);
-});
+};

@@ -26,9 +26,7 @@ class SingletonPerson {
 }
 
 // The client code
-import print from "../../utils/print";
-const { Scope, printBlock } = print;
-export default printBlock(Scope.h2, "Singleton Pattern", function () {
+export default () => {
     const ins1 = SingletonPerson.getInstance();
     ins1.printPerson(); // <- Hi, this is Joanne!
 
@@ -36,4 +34,4 @@ export default printBlock(Scope.h2, "Singleton Pattern", function () {
     ins1.printPerson(); // <- Hi, this is Joanne!
 
     console.log(ins1 === ins2); // <- true
-});
+};

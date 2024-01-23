@@ -66,9 +66,6 @@ class DogHandler extends AbstractHandler {
 }
 
 // The client code
-import print from "../../utils/print";
-
-const { Scope, printBlock } = print;
 
 /**
  * The client code is usually suited to work with a single handler. In most
@@ -99,7 +96,7 @@ const dog = new DogHandler();
 
 monkey.setNext(squirrel).setNext(dog);
 
-export default printBlock(Scope.h2, "Chain Of Responsibility Pattern", function () {
+export default () => {
     /**
      * The client should be able to send a request to any handler, not just the
      * first one in the chain.
@@ -110,4 +107,4 @@ export default printBlock(Scope.h2, "Chain Of Responsibility Pattern", function 
 
     console.log("Chain: Squirrel > Dog\n");
     clientCode(squirrel);
-});
+};

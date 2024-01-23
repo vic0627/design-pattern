@@ -47,9 +47,7 @@ function clientCode(target: Target) {
     console.log(target.request());
 }
 
-import print from "../../utils/print";
-const { Scope, printBlock } = print;
-export default printBlock(Scope.h2, "Adapter Pattern", () => {
+export default () => {
     console.log("Client: I can work just fine with the Target objects:");
     const target = new Target();
     clientCode(target);
@@ -67,4 +65,4 @@ export default printBlock(Scope.h2, "Adapter Pattern", () => {
     console.log("Client: But I can work with it via the Adapter:");
     const adapter = new Adapter(adaptee);
     clientCode(adapter);
-});
+};

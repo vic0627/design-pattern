@@ -60,9 +60,7 @@ class Context {
     }
 }
 
-import print from "../../utils/print";
-const { Scope, printBlock } = print;
-export default printBlock(Scope.h2, "Strategy Pattern", function () {
+export default () => {
     const context = new Context(new ConcreteStrategyA());
     const data = ["b", "d", "c", "a", "e"];
     console.log("Original data: " + data.join(", "));
@@ -71,4 +69,4 @@ export default printBlock(Scope.h2, "Strategy Pattern", function () {
     context.setStrategy(new ConcreteStrategyB());
     console.log("use StrategyB");
     context.doSomeBusinessLogic(data);
-});
+};

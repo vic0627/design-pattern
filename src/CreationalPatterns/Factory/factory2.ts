@@ -2,7 +2,7 @@
  * 定義一個抽象的圖形介面
  */
 interface Shape {
-    draw(): void
+    draw(): void;
 }
 
 /**
@@ -10,13 +10,13 @@ interface Shape {
  */
 class Circle implements Shape {
     draw(): void {
-        console.log("圓型：Ｏ")
+        console.log("圓型：Ｏ");
     }
 }
 
 class Rectangle implements Shape {
     draw(): void {
-        console.log("方形：口")
+        console.log("方形：口");
     }
 }
 
@@ -25,20 +25,18 @@ class ShapeFactory {
         if (type === "circle") {
             return new Circle();
         } else if (type === "rectangle") {
-            return new Rectangle()
+            return new Rectangle();
         }
-        return null
+        return null;
     }
 }
 
-import print from "../../utils/print"
-const { Scope, printBlock } = print;
-export default printBlock(Scope.h3, "Shape factory", () => {
+export default () => {
     const factory = new ShapeFactory();
 
     const circle = factory.createShape("circle");
-    circle?.draw()
+    circle?.draw();
 
     const rectangle = factory.createShape("rectangle");
-    rectangle?.draw()
-})
+    rectangle?.draw();
+};

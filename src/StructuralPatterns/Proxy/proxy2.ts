@@ -80,9 +80,7 @@ class ProxyWallet implements Wallet {
     }
 }
 
-import print from "../../utils/print";
-const { Scope, printBlock } = print;
-export default printBlock(Scope.h3, "代理模式: 錢包範例", () => {
+export default () => {
     const proxy = new ProxyWallet();
     proxy.withDraw(564);
     proxy.logout();
@@ -93,4 +91,4 @@ export default printBlock(Scope.h3, "代理模式: 錢包範例", () => {
     proxy.withDraw(36000);
     proxy.logout();
     proxy.getMoney();
-});
+};
