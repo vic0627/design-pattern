@@ -4,13 +4,13 @@ Behavioral Patterns are concerned with the interaction and communication between
 
 ## Exampls of Behavioral Patterns
 
-- Chain of Responsibility (責任鏈)
-- Command (命令)
-- Iterator (迭代器)
-- Mediator (中介者)
-- Memento (備忘錄)
-- Observer (觀察者)
-- State (狀態)
-- Strategy (策略)
-- Template method (模板方法)
-- Vistor (訪問者)
+- [x] [Chain of Responsibility (責任鏈)](./ChainOfResponsibility/README.md)
+- [x] [Command (命令)](./Command/README.md)
+- [x] [Iterator (迭代器)](./Iterator/README.md)
+- [ ] Mediator (中介者)
+- [x] [Memento (備忘錄)](./Memento/README.md)
+- [x] [Observer (觀察者)](./Observer/README.md)
+- [ ] State (狀態)
+- [x] [Strategy (策略)](./Strategy/README.md)
+- [ ] Template method (模板方法)
+- [ ] Vistor (訪問者)

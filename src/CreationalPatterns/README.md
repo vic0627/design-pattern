@@ -4,11 +4,11 @@ Creational Patterns focus on object creation mechanisms, providing ways to creat
 
 ## Examples of Creational Patterns
 
-- Singleton (單例)
-- Factory Method (工廠方法)
-- Abstract Factory (抽象工廠)
-- Builder (生成器)
-- Prototype (原型)
+- [x] [Singleton (單例)](./Singleton/README.md)
+- [x] [Factory Method (工廠方法)](./Factory/README.md)
+- [x] [Abstract Factory (抽象工廠)](./AbstractFactory/README.md)
+- [ ] Builder (生成器)
+- [ ] Prototype (原型)
 
 ## Additional Information
 

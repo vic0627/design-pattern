@@ -4,10 +4,10 @@ Structural Patterns deal with the composition of classes and objects, focusing o
 
 ## Examples of Structural Patterns
 
-- Adapter (適配器)
-- Bridge (橋接)
-- Composite (組合)
-- Decorator (裝飾)
-- Facade (外觀)
-- Flyweight (享元)
-- Proxy (代理)
+- [x] [Adapter (適配器)](./Adapter/README.md)
+- [ ] Bridge (橋接)
+- [ ] Composite (組合)
+- [ ] Decorator (裝飾)
+- [ ] Facade (外觀)
+- [ ] Flyweight (享元)
+- [x] [Proxy (代理)](./Proxy/README.md)
