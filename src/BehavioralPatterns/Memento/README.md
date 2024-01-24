@@ -1,4 +1,4 @@
-# Memento Pattern (備忘錄模式)
+# Memento Pattern （備忘錄模式）
 
 ## Concept
 
@@ -7,16 +7,18 @@ This pattern is useful in scenarios where you need to implement undo mechanisms,
 
 ## Structure and Components
 
-- Originator: The object whose state needs to be saved. It creates a Memento containing a snapshot of its current internal state.
-- Memento: The object that stores the state of the Originator. It has two interfaces: one is for the Originator to store the state, and the other is for the Caretaker to retrieve the state.
-- Caretaker: The object that keeps track of various snapshots of the Originator's state. It can request the Originator to restore its state.
+![memento](https://refactoringguru.cn/images/patterns/diagrams/memento/structure1-indexed.png)
+
+- **Originator**: The object whose state needs to be saved. It creates a Memento containing a snapshot of its current internal state.
+- **Memento**: The object that stores the state of the Originator. It has two interfaces: one is for the Originator to store the state, and the other is for the Caretaker to retrieve the state.
+- **Caretaker**: The object that keeps track of various snapshots of the Originator's state. It can request the Originator to restore its state.
 
 ## Application Scenarios
 
-- Undo Mechanism: Allows users to revert an object to its previous state.
-- Version Control Systems: Useful for saving and restoring the state of an object at different points in time.
-- Database Transactions: Storing and restoring the state of an object during database transactions.
-- Snapshot functionality: Creating snapshots of an object's state for various purposes.
+- **Undo Mechanism**: Allows users to revert an object to its previous state.
+- **Version Control Systems**: Useful for saving and restoring the state of an object at different points in time.
+- **Database Transactions**: Storing and restoring the state of an object during database transactions.
+- **Snapshot functionality**: Creating snapshots of an object's state for various purposes.
 
 ## Implementation Approach
 
@@ -36,19 +38,19 @@ This pattern is useful in scenarios where you need to implement undo mechanisms,
 
 ### Pros
 
-- Isolation of Object State: The object's internal state is encapsulated within the Memento, providing a clear separation.
-- Supports Undo Mechanisms: Facilitates easy implementation of undo mechanisms.
-- Versioning and Persistence: Useful for creating versioning systems and handing persistence.
+- **Isolation of Object State**: The object's internal state is encapsulated within the Memento, providing a clear separation.
+- **Supports Undo Mechanisms**: Facilitates easy implementation of undo mechanisms.
+- **Versioning and Persistence**: Useful for creating versioning systems and handing persistence.
 
 ### Cons
 
-- Overhead: Can introduce overhead, especially if many states need to be stored.
-- Security Concerns: In situations where the Originator's state should not be exposed, this pattern might not be suitable.
+- **Overhead**: Can introduce overhead, especially if many states need to be stored.
+- **Security Concerns**: In situations where the Originator's state should not be exposed, this pattern might not be suitable.
 
 ## Relationship with Other Patterns
 
-- Command Pattern: Memento can be used in combination with the Command Pattern to implement undo functionality efficiently.
-- State Pattern: While Memento captures an object's state, State Pattern defines the different states and their behaviors.
+- **Command Pattern**: Memento can be used in combination with the Command Pattern to implement undo functionality efficiently.
+- **State Pattern**: While Memento captures an object's state, State Pattern defines the different states and their behaviors.
 
 ---
 

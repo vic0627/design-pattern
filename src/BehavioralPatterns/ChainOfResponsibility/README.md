@@ -1,6 +1,4 @@
-# Chain of Responsibility pattern (責任鏈模式)
-
-> The **Chain of Responsibility** pattern is a behavioral design pattern that allows an object to pass a request along a chain of potential handlers until the request is handled or reaches the end of the chain. It decouples the sender of the request from the reciever by giving multiple objects the opportunity to handle the request.
+# Chain of Responsibility Pattern （責任鏈模式）
 
 ## Concept
 
@@ -8,66 +6,34 @@ The main concept behind the Chain of Responsibility pattern is to create a chain
 
 ## Structure and Components
 
-```text
-    +-----------------------+       +--------+
- ┌->| interface Handler     |<------| Client |
- |  | + setNext(h: Handler) |       +--------+
- |  | + handle(request)     |           |
- |  +-----------------------+           {
- |              ^                           h1 = new HandlerA()
- |              |                           h2 = new HandlerB()
- |  +-----------------------+               h3 = new HandlerC()
- |  | BaseHandler           |               h1.setNext(h2)
- └<>| - next: Handler       |               h2.setNext(h3)
-    | + setNext(h: Handler) |               // ...
-    | + handle(request)     |---┐           h1.handle(request)
-    +-----------------------+   |       }
-                ^               |
-                |               └---{
-    +-----------------------+           if (next != null)
-    | ConcreteHandlers      |+              next.handle(request)
-    | ...                   ||      }
-    | + handle(request)     ||--┐
-    +-----------------------+|  └---{
-     +-----------------------+          if (canHandle(request)) {
-                                            // ...
-                                        } else {
-                                            parent::handle(request)
-                                        }
-                                    }
-```
+![chain-of-responsibility](https://refactoringguru.cn/images/patterns/diagrams/chain-of-responsibility/structure-indexed.png)
 
-1. **Handler 處理程序**
-   The Handler declares the common interface for all concrete handlers. This interface typically includes a single method for request handling, but sometimes it may also include a method for setting the next handler in the chain.
-2. **Base Handler 基礎處理程序**
-   The Base Handler is an optional class where you can place the shared code among handlers. Typically, this class defines a member variable to hold a reference to the next handler in the chain. The client can create the chain by passing handlers to the constructor or setter method of the previous handler. This class can also implement default handling behavior by checking if the next handler exists before passing the request to it.
-3. **Concrete Handlers 處理程序實體**
-   The Concrete Handlers contain the actual code for handling requests. Each handler, upon receiving a request, must decide whether to handle it and whether to pass it along the chain.
-   Handlers are typically independent and immutable, requiring all necessary data to be provided through their contructor.
-4. **Client 客戶端**
-   The Client can generate the chain of handlers either statically or dynamically based on the program logic. It's important to note that a request can be sent to any handler in the chain, not necessarily the first one.
+- **Handler**: The Handler declares the common interface for all concrete handlers. This interface typically includes a single method for request handling, but sometimes it may also include a method for setting the next handler in the chain.
+- **Base Handler**: The Base Handler is an optional class where you can place the shared code among handlers. Typically, this class defines a member variable to hold a reference to the next handler in the chain. The client can create the chain by passing handlers to the constructor or setter method of the previous handler. This class can also implement default handling behavior by checking if the next handler exists before passing the request to it.
+- **Concrete Handlers**: The Concrete Handlers contain the actual code for handling requests. Each handler, upon receiving a request, must decide whether to handle it and whether to pass it along the chain. Handlers are typically independent and immutable, requiring all necessary data to be provided through their contructor.
+- **Client**: The Client can generate the chain of handlers either statically or dynamically based on the program logic. It's important to note that a request can be sent to any handler in the chain, not necessarily the first one.
 
 ## Application Scenarios
 
-1. Request Processing: When there are multiple processing steps or stages involved in handling a request, and each step can be handled by different object in the chain.
-2. Event Handling: When events need to be processed by multiple event handlers in a specific order or hierarchy.
-3. Logging and Error Handling: When different loggers or error handlers can handle log messages or errors based on their severity ot type.
+1. **Request Processing**: When there are multiple processing steps or stages involved in handling a request, and each step can be handled by different object in the chain.
+2. **Event Handling**: When events need to be processed by multiple event handlers in a specific order or hierarchy.
+3. **Logging and Error Handling**: When different loggers or error handlers can handle log messages or errors based on their severity ot type.
 
 ## Pros and Cons
 
-### Advantages
+### Pros
 
-1. Flexibility and Extensibility: It allows new handlers to be added or existing handlers to be modified without affecting the client code or the other parts of the system.
-2. Decoupling: It decouples the sender of the request from the receiver, promoting a mor flexible and maintainable codebase.
-3. Dynamic Handling: The specific handler in the chain can be determined dynamically at runtime, providing more flexibility in handling requests.
+1. **Flexibility and Extensibility**: It allows new handlers to be added or existing handlers to be modified without affecting the client code or the other parts of the system.
+2. **Decoupling**: It decouples the sender of the request from the receiver, promoting a mor flexible and maintainable codebase.
+3. **Dynamic Handling**: The specific handler in the chain can be determined dynamically at runtime, providing more flexibility in handling requests.
 
-### Disadvantages
+### Cons
 
-1. Unhandled Requests: If the chain is not properly configured or there is no handler capable of handling the request, it may go unhandled, leading to potential issues or errors.
-2. Performance Impact: The request may need to traverse the entire chain before being handled, which can introduce some performance overhead.
-3. Complex Configuration: Configuring the chain and ensuring the correct order and hierarchy of handlers can be complex, especially in larger systems.
+1. **Unhandled Requests**: If the chain is not properly configured or there is no handler capable of handling the request, it may go unhandled, leading to potential issues or errors.
+2. **Performance Impact**: The request may need to traverse the entire chain before being handled, which can introduce some performance overhead.
+3. **Complex Configuration**: Configuring the chain and ensuring the correct order and hierarchy of handlers can be complex, especially in larger systems.
 
-## Relationship with other patterns
+## Relationship with Other Patterns
 
 - The **Chain of Responsibility**, **Command**, **Mediator**, and **Observer** patterns address various ways of connecting senders and receivers of requests:
   - The Chain of Responsibility passes a request along a chain of potential receivers until one of them handles it.
