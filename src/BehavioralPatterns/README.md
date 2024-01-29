@@ -10,7 +10,7 @@ Behavioral Patterns are concerned with the interaction and communication between
 - [ ] Mediator (中介者)
 - [x] [Memento (備忘錄)](./Memento/README.md)
 - [x] [Observer (觀察者)](./Observer/README.md)
-- [ ] State (狀態)
+- [x] [State (狀態)](./State/README.md)
 - [x] [Strategy (策略)](./Strategy/README.md)
 - [ ] Template method (模板方法)
 - [ ] Vistor (訪問者)
