@@ -6,7 +6,7 @@ Structural Patterns deal with the composition of classes and objects, focusing o
 
 - [x] [Adapter (適配器)](./Adapter/README.md)
 - [ ] Bridge (橋接)
-- [ ] Composite (組合)
+- [x] [Composite (組合)](./Composite/README.md)
 - [x] [Decorator (裝飾)](./Decorator/README.md)
 - [x] [Facade (外觀)](./Facade/README.md)
 - [x] [Flyweight (享元)](./Flyweight/README.md)
