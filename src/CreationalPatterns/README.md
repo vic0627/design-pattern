@@ -7,7 +7,7 @@ Creational Patterns focus on object creation mechanisms, providing ways to creat
 - [x] [Singleton (單例)](./Singleton/README.md)
 - [x] [Factory Method (工廠方法)](./Factory/README.md)
 - [x] [Abstract Factory (抽象工廠)](./AbstractFactory/README.md)
-- [ ] Builder (生成器)
+- [x] [Builder (生成器)](./Builder/README.md)
 - [x] [Prototype (原型)](./Prototype/README.md)
 
 ## Additional Information
