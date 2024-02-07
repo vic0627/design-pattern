@@ -12,5 +12,5 @@ Behavioral Patterns are concerned with the interaction and communication between
 - [x] [Observer (觀察者)](./Observer/README.md)
 - [x] [State (狀態)](./State/README.md)
 - [x] [Strategy (策略)](./Strategy/README.md)
-- [ ] Template method (模板方法)
+- [x] [Template method (模板方法)](./TemplateMethod/README.md)
 - [x] [Vistor (訪問者)](./Vistor/README.md)
